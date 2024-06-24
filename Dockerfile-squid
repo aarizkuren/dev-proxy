@@ -8,5 +8,5 @@ RUN apt-get update && apt-get -y install apache2-utils
 COPY ./config/squid.conf /etc/squid/squid.conf
 RUN htpasswd -b -c /etc/squid/users_passwd $squiduser $squidpass
 
-COPY startup.sh /usr/bin/startup.sh
+COPY ./startup.sh /usr/bin/startup.sh
 RUN chmod 755 /usr/bin/startup.sh

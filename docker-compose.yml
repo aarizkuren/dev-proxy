@@ -13,7 +13,7 @@ services:
       - "3128:3128"
     volumes:
       - ./config/squid.conf:/etc/squid/squid.conf
-      - ./config/hosts:/etc/squid/hosts_template
+      - /etc/hosts:/etc/squid/hosts_template:ro
       - ./logs:/var/log/squid/
     restart: on-failure
     command: sh -c "/usr/bin/startup.sh ${HOST_IP}"
